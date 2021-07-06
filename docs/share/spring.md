@@ -99,6 +99,9 @@ AnnotationConfigApplicationContext applicationContext = new AnnotationConfigAppl
 
 ## IOC
 
+IOC容器初始化过程：
+Resource定位、BeanDefinition载入、IOC容器注册Beandefinition
+
 ## AOP：【动态代理】
 
 > 程序在运行期间，动态的将某段代码切入到指定方法指定位置进行运行
