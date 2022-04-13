@@ -51,17 +51,15 @@ module.exports = {
 			  ]
 			},
 			{
-			  title:'Redis',
+			  title:'中间件',
 			  collapsable: true,
 			  children:[
-				'/share/Redis',
-			  ]
-			},
-			{
-			  title:'ElasticSearch',
-			  collapsable: true,
-			  children:[
-				'/share/es',
+				'/share/中间件/es',
+				'/share/中间件/kafka',
+				'/share/中间件/Nginx',
+				'/share/中间件/zookeeper',
+				'/share/中间件/Redis',
+				'/share/中间件/mq'
 			  ]
 			},
 			{
@@ -72,11 +70,27 @@ module.exports = {
 			  ]
 			},
 			{
+			  title:'分布式',
+			  collapsable: true,
+			  children:[
+				'/share/分布式',
+			  ]
+			},
+			{
 			  title:'Spring',
 			  collapsable: true,
 			  children:[
 				'/share/spring',
 				'/share/springboot',
+			  ]
+			},
+			{
+			  title:'其他',
+			  collapsable: true,
+			  children:[
+				'/share/maven',
+				'/share/restful',
+				'/share/openAPI接口',
 			  ]
 			}
 		  ]
