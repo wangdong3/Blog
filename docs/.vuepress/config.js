@@ -59,7 +59,7 @@ module.exports = {
 				'/share/中间件/Nginx',
 				'/share/中间件/zookeeper',
 				'/share/中间件/Redis',
-				'/share/中间件/mq'
+				'/share/中间件/RocketMQ'
 			  ]
 			},
 			{

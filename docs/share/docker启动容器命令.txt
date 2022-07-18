@@ -15,7 +15,7 @@ docker pull wurstmeister/kafka
 （2）启动zookeeper容器
 docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper
 （3）启动kafka容器
-docker run  -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=172.31.2.43:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://172.31.2.43:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -t wurstmeister/kafka
+docker run -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=172.31.2.43:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://172.31.2.43:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -t wurstmeister/kafka
 （4）测试kafka 进入kafka容器的命令行
 docker exec -it kafka /bin/bash
 （5）进入kafka所在目录
