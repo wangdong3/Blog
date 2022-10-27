@@ -4,7 +4,10 @@
 ::yarn application -status application_1436784252938_0022 查看任务状态
 ::yarn applicaton -kill  applicationId  kill 任务
 
-npm run build
+
+::npm run build
+export NODE_OPTIONS=--openssl-legacy-provider
+yarn build
 
 cd docs/.vuepress/dist
 
