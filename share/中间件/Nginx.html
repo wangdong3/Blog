@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>nginx | 文档管理</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="文档管理">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.d7574f63.css" as="style"><link rel="preload" href="/blog/assets/js/app.c61f9dc1.js" as="script"><link rel="preload" href="/blog/assets/js/2.388d52cb.js" as="script"><link rel="preload" href="/blog/assets/js/24.324df21c.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.e48886a1.js"><link rel="prefetch" href="/blog/assets/js/11.0db0625b.js"><link rel="prefetch" href="/blog/assets/js/12.f1057769.js"><link rel="prefetch" href="/blog/assets/js/13.b442abea.js"><link rel="prefetch" href="/blog/assets/js/14.daba5dbf.js"><link rel="prefetch" href="/blog/assets/js/15.c8b8c48c.js"><link rel="prefetch" href="/blog/assets/js/16.7215a435.js"><link rel="prefetch" href="/blog/assets/js/17.2fc8aa9b.js"><link rel="prefetch" href="/blog/assets/js/18.616d526d.js"><link rel="prefetch" href="/blog/assets/js/19.1c4d1a0e.js"><link rel="prefetch" href="/blog/assets/js/20.29879dee.js"><link rel="prefetch" href="/blog/assets/js/21.1d2b8804.js"><link rel="prefetch" href="/blog/assets/js/22.d0629f3d.js"><link rel="prefetch" href="/blog/assets/js/23.93a8ebaf.js"><link rel="prefetch" href="/blog/assets/js/25.b6c9075c.js"><link rel="prefetch" href="/blog/assets/js/26.99b267df.js"><link rel="prefetch" href="/blog/assets/js/27.95b0c3cd.js"><link rel="prefetch" href="/blog/assets/js/28.d14ae9b5.js"><link rel="prefetch" href="/blog/assets/js/29.43834437.js"><link rel="prefetch" href="/blog/assets/js/3.7cefba26.js"><link rel="prefetch" href="/blog/assets/js/30.bb384616.js"><link rel="prefetch" href="/blog/assets/js/31.20f86835.js"><link rel="prefetch" href="/blog/assets/js/32.c742083f.js"><link rel="prefetch" href="/blog/assets/js/33.b2366c8c.js"><link rel="prefetch" href="/blog/assets/js/34.dd52f826.js"><link rel="prefetch" href="/blog/assets/js/35.17416a72.js"><link rel="prefetch" href="/blog/assets/js/36.ff166262.js"><link rel="prefetch" href="/blog/assets/js/4.2f1c3a5f.js"><link rel="prefetch" href="/blog/assets/js/5.4c55088b.js"><link rel="prefetch" href="/blog/assets/js/6.c9d0387c.js"><link rel="prefetch" href="/blog/assets/js/7.08c24d6d.js"><link rel="prefetch" href="/blog/assets/js/8.f72ad2ba.js"><link rel="prefetch" href="/blog/assets/js/9.c27fcf06.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.d7574f63.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/img/logo.png" alt="文档管理" class="logo"> <span class="site-name can-hide">文档管理</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/share/" class="nav-link router-link-active">
+  Share
+</a></div><div class="nav-item"><a href="http://blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wangdong3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/share/" class="nav-link router-link-active">
+  Share
+</a></div><div class="nav-item"><a href="http://blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wangdong3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据结构</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>中间件</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/share/中间件/es.html" class="sidebar-link">ElasticSearch应用</a></li><li><a href="/blog/share/中间件/kafka.html" class="sidebar-link">kafka</a></li><li><a href="/blog/share/中间件/Nginx.html" class="active sidebar-link">nginx</a></li><li><a href="/blog/share/中间件/zookeeper.html" class="sidebar-link">zookeeper</a></li><li><a href="/blog/share/中间件/Redis.html" class="sidebar-link">Redis</a></li><li><a href="/blog/share/中间件/RocketMQ.html" class="sidebar-link">RocketMQ</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>知识点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>分布式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>其他</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="nginx">nginx</h2> <blockquote><p>高性能HTTP和反向代理服务器。</p></blockquote> <h2 id="前言">前言</h2> <h3 id="反向代理">反向代理</h3> <p>作为服务端的代理服务，接收客户端的请求，将请求转发内网服务器，并将服务器处理结果返回客户端。</p> <p>对服务端透明，对客户端不透明。</p> <h3 id="正向代理">正向代理</h3> <p>作为客户端的代理，向目标服务器发出请求。</p> <p>对客户端透明，对服务端不透明。</p> <h3 id="选择nginx">选择Nginx</h3> <p>选择使用一个服务器之前，要从以下几个方面综合考量</p> <ol><li><p>效率：快</p></li> <li><p>成本：内存消耗少</p></li> <li><p>是否可靠：稳定性高，宕机概率很低</p></li> <li><p>是否强大：高并发连接</p></li> <li><p>是否方便：开源，配置简单，支持热部署</p></li></ol> <h2 id="核心概念">核心概念</h2> <h3 id="动静分离">动静分离</h3> <p>在 <code>web</code> 服务器架构中，将静态页面与动态页面或者静态内容接口和动态内容接口分开不同系统访问。</p> <p><code>Nginx</code>作为静态代理服务器，反向代理服务器</p> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> TD
+
+<span class="token keyword">subgraph</span> 动态web服务器
+t<span class="token text string">(Tomcat等处理复杂业务的动态web服务器)</span>
+<span class="token keyword">end</span>
+
+
+<span class="token keyword">subgraph</span> Nginx
+g<span class="token text string">(作为静态web服务器)</span>
+g1<span class="token text string">(作为反向代理服务器)</span>
+<span class="token keyword">end</span>
+
+a<span class="token text string">(客户端请求)</span>
+a<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">静态文件请求</span><span class="token arrow operator">--&gt;</span></span>g
+g<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">静态文件</span><span class="token arrow operator">.-&gt;</span></span>a
+
+a<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">动态请求</span><span class="token arrow operator">--&gt;</span></span>g1
+g1<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">转发请求</span><span class="token arrow operator">--&gt;</span></span>t
+
+t<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">动态应答</span><span class="token arrow operator">.-&gt;</span></span>g1
+g1<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">转发动态应答</span><span class="token arrow operator">.-&gt;</span></span>a
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="负载均衡">负载均衡</h3> <blockquote><p><code>Nginx</code>实现负载均衡，将请求转发给服务器集群</p></blockquote> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+a<span class="token text string">((客户端))</span>
+a<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">request</span><span class="token arrow operator">--&gt;</span></span>b<span class="token text string">(Nginx)</span>
+b<span class="token arrow operator">--&gt;</span>c1<span class="token text string">(服务端)</span>
+b<span class="token arrow operator">--&gt;</span>c2<span class="token text string">(服务端)</span>
+b<span class="token arrow operator">--&gt;</span>c3<span class="token text string">(服务端)</span>
+b<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">response</span><span class="token arrow operator">.-&gt;</span></span>a
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="负载均衡策略">负载均衡策略</h4> <ul><li><p>轮询：默认策略，将客户端请求轮询发给服务端</p></li> <li><p>最小连接数：将请求优先分给压力最小的服务器</p></li> <li><p>最快响应时间：将请求优先分给响应时间最短的服务器</p></li> <li><p>客户端<code>IP</code>绑定：来自同一个<code>IP</code>的请求固定分给一台服务器</p></li></ul> <h2 id="配置相关">配置相关</h2> <p>配置文件 <code>nginx.conf</code></p> <h3 id="主配置项">主配置项</h3> <div class="language-conf line-numbers-mode"><pre class="language-text"><code># 指定运行 Nginx 的 woker 子进程的属主和属组，其中组可以不指定
+user  nobody;
+
+# 指定 Nginx 启动的 worker 子进程数量。
+worker_processes  1;
+
+# 指定运行 Nginx master 主进程的 pid 文件存放路径。
+pid   logs/nginx.pid;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><code>Nginx</code>进程间的关系</p> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> TD
+
+<span class="token comment">%%master负责管理启停 ，重载配置文件，平滑升级</span>
+m<span class="token text string">(master进程)</span><span class="token arrow operator">---</span>w<span class="token text string">(worker进程)</span>
+m<span class="token arrow operator">---</span>w1<span class="token text string">(worker进程)</span>
+m<span class="token arrow operator">---</span>w2<span class="token text string">(worker进程)</span>
+m<span class="token arrow operator">---</span>w3<span class="token text string">(worker进程)</span>
+
+w<span class="token arrow operator">---</span>c<span class="token text string">(客户端HTTP请求)</span>
+w1<span class="token arrow operator">---</span>c1<span class="token text string">(客户端HTTP请求)</span>
+w2<span class="token arrow operator">---</span>c2<span class="token text string">(客户端HTTP请求)</span>
+w3<span class="token arrow operator">---</span>c3<span class="token text string">(客户端HTTP请求)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="块配置项">块配置项</h3> <div class="language-conf line-numbers-mode"><pre class="language-text"><code>#Nginx 服务器与用户的网络连接
+events {
+	# Nginx 使用何种事件驱动模型。可选值为：select、poll、kqueue、epoll、/dev/poll、eventport
+	use epoll; #使用epoll的IO模型
+	
+	# worker 子进程能够处理的最大并发连接数。
+	worker_connections 1024; 
+	
+	# 是否打开负载均衡互斥锁。
+	accept_mutex on # 默认是off关闭的
+	...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-conf line-numbers-mode"><pre class="language-text"><code>#代理、缓存、日志定义
+http {
+
+	#定义上游服务器集群，做负载用
+    upstream {
+        ...
+    }
+    
+	#指定服务器名称（域名或IP：port）
+    server {
+        listen       80;       # 配置监听的端口
+        server_name  localhost;    # 配置的域名
+
+		# 配置路径
+        location / {
+        	# 指定静态资源目录位置
+            root /html;
+            index index.html;
+            deny &quot;具体ip&quot;;
+            allow &quot;具体IP&quot;;
+        }
+        error_page 500 502 503 504 /50x.html;
+        error_page 400 404 error.html;
+        ...
+    }
+	...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="反向代理配置">反向代理配置</h3> <p>核心：<code>upstream</code>、<code>proxy_pass</code></p> <div class="language-conf line-numbers-mode"><pre class="language-text"><code># 设置上游服务名称，可以proxy_pass指令中使用的代理服务器，默认的负载均衡是轮询
+upstream &quot;servername&quot; {
+	# 定义上游服务器地址
+	server &quot;ip:port weight=1 max_fails=2 fail_timeout=10s&quot;;
+	server &quot;ip:port weight=2 max_fails=2 fail_timeout=10s&quot;;
+	server &quot;ip:port weight=3 max_fails=2 fail_timeout=10s&quot;;
+	
+	# 限制每个 worker 子进程与上游服务器空闲长连接的最大数量。
+	keepalive 32;
+	# 单个长连接可以处理的最多 HTTP 请求个数。
+  	keepalive_requests 50;
+  	
+  	# 空闲长连接的最长保持时间。
+ 	keepalive_timeout 30s;
+	......
+}
+
+upstream &quot;servername&quot; {
+	ip_hash;
+	server &quot;ip:port&quot;;
+	server &quot;ip:port&quot;;
+	server &quot;ip:port down&quot;;
+	......
+}
+
+server {
+	listen &quot;port&quot;;
+	server_name &quot;server_name&quot;;
+	
+	location /
+	{
+		# 用于配置代理服务器
+		proxy_pass http://&quot;servername&quot;；
+		proxy_set_header Host &quot;server_name&quot;
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h4 id="反向代理配置示例">反向代理配置示例</h4> <div class="language-conf line-numbers-mode"><pre class="language-text"><code>http {    
+	upstream demo {
+		# 作为上游服务器
+		server localhost:8085 weight=1;    
+		keepalive 32;
+         keepalive_requests 80;
+         keepalive_timeout 20s;
+	}
+	
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location /proxy {
+        	root   html;
+        	index  index.html index.htm;
+	    	proxy_pass http://demo/proxy;
+        }
+    }
+}
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>访问<code>http://demo/proxy</code>代理即可转发到后台<code>localhost:8085</code>服务</p> <h4 id="负载均衡配置示例">负载均衡配置示例</h4> <div class="language-conf line-numbers-mode"><pre class="language-text"><code>upstream demo_server {
+	# ip_hash; 
+	# least_conn;
+	# hash $request_uri; #使用 request_uri 变量作为 hash 的 key 值
+    server localhost:8020;
+    server localhost:8030;
+    server localhost:8040;
+}
+
+server {
+    listen 80;
+    server_name localhost;
+  
+    location /balance/ {
+  	  proxy_pass http://demo_server;
+    }
+}
+
+server{
+    listen 8020;
+    location / {
+  	  return 200 'return 8020 \n';
+    }
+}
+
+server{
+    listen 8030;
+    location / {
+  	  return 200 'return 8030 \n';
+    }
+}
+
+server{
+    listen 8040;
+    location / {
+  	  return 200 'return 8040 \n';
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><p>访问<code>http://demo_server/balance</code>，请求将会分发到上游三个服务器</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/20/2022, 6:41:34 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/share/中间件/kafka.html" class="prev">
+        kafka
+      </a></span> <span class="next"><a href="/blog/share/中间件/zookeeper.html">
+        zookeeper
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.c61f9dc1.js" defer></script><script src="/blog/assets/js/2.388d52cb.js" defer></script><script src="/blog/assets/js/24.324df21c.js" defer></script>
+  </body>
+</html>

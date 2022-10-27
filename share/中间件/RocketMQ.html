@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RocketMQ | 文档管理</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="文档管理">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.d7574f63.css" as="style"><link rel="preload" href="/blog/assets/js/app.c61f9dc1.js" as="script"><link rel="preload" href="/blog/assets/js/2.388d52cb.js" as="script"><link rel="preload" href="/blog/assets/js/26.99b267df.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.e48886a1.js"><link rel="prefetch" href="/blog/assets/js/11.0db0625b.js"><link rel="prefetch" href="/blog/assets/js/12.f1057769.js"><link rel="prefetch" href="/blog/assets/js/13.b442abea.js"><link rel="prefetch" href="/blog/assets/js/14.daba5dbf.js"><link rel="prefetch" href="/blog/assets/js/15.c8b8c48c.js"><link rel="prefetch" href="/blog/assets/js/16.7215a435.js"><link rel="prefetch" href="/blog/assets/js/17.2fc8aa9b.js"><link rel="prefetch" href="/blog/assets/js/18.616d526d.js"><link rel="prefetch" href="/blog/assets/js/19.1c4d1a0e.js"><link rel="prefetch" href="/blog/assets/js/20.29879dee.js"><link rel="prefetch" href="/blog/assets/js/21.1d2b8804.js"><link rel="prefetch" href="/blog/assets/js/22.d0629f3d.js"><link rel="prefetch" href="/blog/assets/js/23.93a8ebaf.js"><link rel="prefetch" href="/blog/assets/js/24.324df21c.js"><link rel="prefetch" href="/blog/assets/js/25.b6c9075c.js"><link rel="prefetch" href="/blog/assets/js/27.95b0c3cd.js"><link rel="prefetch" href="/blog/assets/js/28.d14ae9b5.js"><link rel="prefetch" href="/blog/assets/js/29.43834437.js"><link rel="prefetch" href="/blog/assets/js/3.7cefba26.js"><link rel="prefetch" href="/blog/assets/js/30.bb384616.js"><link rel="prefetch" href="/blog/assets/js/31.20f86835.js"><link rel="prefetch" href="/blog/assets/js/32.c742083f.js"><link rel="prefetch" href="/blog/assets/js/33.b2366c8c.js"><link rel="prefetch" href="/blog/assets/js/34.dd52f826.js"><link rel="prefetch" href="/blog/assets/js/35.17416a72.js"><link rel="prefetch" href="/blog/assets/js/36.ff166262.js"><link rel="prefetch" href="/blog/assets/js/4.2f1c3a5f.js"><link rel="prefetch" href="/blog/assets/js/5.4c55088b.js"><link rel="prefetch" href="/blog/assets/js/6.c9d0387c.js"><link rel="prefetch" href="/blog/assets/js/7.08c24d6d.js"><link rel="prefetch" href="/blog/assets/js/8.f72ad2ba.js"><link rel="prefetch" href="/blog/assets/js/9.c27fcf06.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.d7574f63.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/img/logo.png" alt="文档管理" class="logo"> <span class="site-name can-hide">文档管理</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/share/" class="nav-link router-link-active">
+  Share
+</a></div><div class="nav-item"><a href="http://blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wangdong3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/share/" class="nav-link router-link-active">
+  Share
+</a></div><div class="nav-item"><a href="http://blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wangdong3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据结构</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>中间件</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/share/中间件/es.html" class="sidebar-link">ElasticSearch应用</a></li><li><a href="/blog/share/中间件/kafka.html" class="sidebar-link">kafka</a></li><li><a href="/blog/share/中间件/Nginx.html" class="sidebar-link">nginx</a></li><li><a href="/blog/share/中间件/zookeeper.html" class="sidebar-link">zookeeper</a></li><li><a href="/blog/share/中间件/Redis.html" class="sidebar-link">Redis</a></li><li><a href="/blog/share/中间件/RocketMQ.html" class="active sidebar-link">RocketMQ</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>知识点</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>分布式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>其他</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="rocketmq">RocketMQ</h1> <h2 id="前言">前言</h2> <h3 id="为什么使用mq-优点">为什么使用MQ（优点）</h3> <ol><li><p>服务之间的<strong>解耦</strong></p></li> <li><p><strong>异步</strong>的场景</p></li> <li><p>高并发下<strong>削峰</strong></p></li></ol> <h3 id="mq的缺点">MQ的缺点</h3> <ol><li>服务<strong>可用性</strong>降低</li> <li>系统<strong>复杂性</strong>增加</li></ol> <h2 id="rocketmq设计浅析">RocketMQ设计浅析</h2> <h3 id="几个概念">几个概念</h3> <p><code>nameServer</code>、 <code>broker</code></p> <p><code>producer</code>、<code>consumer</code></p> <p><code>topic</code>、<code>tag</code>、<code>queue</code></p> <blockquote><p>消息的一个生命周期概括下来就是：生产、存储、消费</p></blockquote> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+p<span class="token text string">(producer)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">生产消息</span><span class="token arrow operator">--&gt;</span></span>m<span class="token text string">(MQ存储)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">消费消息</span><span class="token arrow operator">--&gt;</span></span>c<span class="token text string">(consumer)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="消息生产">消息生产</h4> <p><code>producer</code></p> <blockquote><p>消息生产者，生产消息的服务</p></blockquote> <h4 id="消息消费">消息消费</h4> <p><code>consumer</code></p> <blockquote><p>消息消费者，消费生产者投放在MQ中的消息</p></blockquote> <h4 id="消息存储">消息存储</h4> <p><code>nameServer</code></p> <blockquote><p><code>nameServer</code>是<code>RocketMQ</code>的服务注册中心（类似<code>zookeeper</code>），用来保存<code>broker</code>元信息，管理<code>topic</code>和<code>broker</code>路由信息</p></blockquote> <p><code>broker</code></p> <blockquote><p><code>broker</code>是消息存储中心，用于存储<code>producer</code>生产的消息，同时还存储一些元信息，包括队列信息、消费进度偏移量；</p></blockquote> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> TD
+a<span class="token text string">(nameServer注册中心)</span>
+<span class="token keyword">subgraph</span> broker集群
+<span class="token comment">%%Master 与 Slave 的对应关系通过指定相同的BrokerName，不同的BrokerId 来定义，BrokerId为0表示Master，非0表示Slave</span>
+b<span class="token text string">(master)</span>
+b1<span class="token text string">(salve)</span>
+b2<span class="token text string">(salve)</span>
+<span class="token keyword">end</span>
+a<span class="token arrow operator">---</span>b
+a<span class="token arrow operator">---</span>b1
+a<span class="token arrow operator">---</span>b2
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>需先启动<code>nameServer</code>再启动<code>broker</code>；</p> <p>（1）<code>broker</code>启动时，会注册到<code>nameServer</code>；</p> <p>（2）<code>nameServer</code>和<code>broker</code>保持长链接，间隔30秒检查<code>broker</code>是否存活，超过两分钟没有心跳，则断开连接；</p> <p>（3）<code>producer</code>生产消息，会根据<code>topic</code>到<code>nameServer</code>获取到<code>broker</code>的路由信息，进而和<code>broker</code>取得连接；</p> <p><code>topic</code></p> <blockquote><p>消息主题，对存储的消息进行逻辑分类</p></blockquote> <p><code>tag</code></p> <blockquote><p>消息标签，<code>topic</code>的下一层级对消息更细粒度的分类</p></blockquote> <p>消费者可订阅指定主题，来消息该主题下的消息</p> <p>同一个消费者组下的消费者实例订阅的消息<code>topic</code>，<code>tag</code>必须完全一致</p> <p>订阅关系：<code>rocketMQ</code>系统中消费者获取消息、处理消息的规则和状态配置。订阅关系按照消费者分组和主题粒度进行设计。</p> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+p<span class="token text string">(producer)</span>
+
+p<span class="token arrow operator">--&gt;</span>t<span class="token text string">(topic)</span>
+
+<span class="token keyword">subgraph</span> topic
+t<span class="token arrow operator">--&gt;</span>ta<span class="token text string">(tagA)</span>
+t<span class="token arrow operator">--&gt;</span>ta1<span class="token text string">(tagB)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">subgraph</span> consumerGroupA
+c<span class="token text string">(consumer)</span>
+c1<span class="token text string">(consumer)</span>
+c2<span class="token text string">(consumer)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">subgraph</span> consumerGroupB
+c3<span class="token text string">(consumer)</span>
+c4<span class="token text string">(consumer)</span>
+c5<span class="token text string">(consumer)</span>
+<span class="token keyword">end</span>
+
+ta<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c
+ta<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c1
+ta<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c2
+
+
+ta1<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c3
+ta1<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c4
+ta1<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">订阅</span><span class="token arrow operator">--&gt;</span></span>c5
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p><code>message queqe</code></p> <blockquote><p>消息队列，消息实际存储单元容器，一个主题包含一个或多个队列</p></blockquote> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+
+<span class="token keyword">subgraph</span> topic
+    <span class="token keyword">subgraph</span> queue
+    m<span class="token text string">(message...message...)</span>
+    <span class="token keyword">end</span>
+    
+    <span class="token keyword">subgraph</span> queue1
+    m1<span class="token text string">(message...message...)</span>
+    <span class="token keyword">end</span>
+    
+    <span class="token keyword">subgraph</span> queue2
+    m2<span class="token text string">(message...message...)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">subgraph</span> producer
+a<span class="token text string">(producer)</span><span class="token arrow operator">--&gt;</span>m
+a1<span class="token text string">(producer)</span><span class="token arrow operator">--&gt;</span>m1
+a2<span class="token text string">(producer)</span><span class="token arrow operator">--&gt;</span>m2
+<span class="token keyword">end</span>
+
+<span class="token keyword">subgraph</span> consumerGroup
+m<span class="token arrow operator">--&gt;</span>c<span class="token text string">(consumer)</span>
+m1<span class="token arrow operator">--&gt;</span>c1<span class="token text string">(consumer)</span>
+m2<span class="token arrow operator">--&gt;</span>c2<span class="token text string">(consumer)</span>
+<span class="token keyword">end</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="数据存储设计-持久化">数据存储设计（持久化）</h3> <ol><li><code>commitlog</code>文件：存储消息主体。写入消息过程中追求极致的<strong>磁盘顺序写</strong>性能，所有主题的消息写入一个文件，并将第一个消息的物理偏移量作为文件名。</li></ol> <p>（消息在文件中的物理地址 = 消息偏移量 - 文件名）</p> <ol start="2"><li><code>consumequeue</code>文件：逻辑消息队列，<code>commitlog</code>文件基于<code>topic</code>的索引文件，保存了指定<code>topic</code>下的队列消息在<code>commitlog</code>的<code>offset</code>、<code>size</code>、<code>tag</code>的<code>hashcode</code></li></ol> <p>（<code>commitLog</code> 与 <code>consumequeue</code> 文件的关联：消息直接进入<code>commitLog</code> 文件，存储实际内容；之后 <code>broker</code> 通过定时任务 <code>ReputService</code> 每1ms将消息的偏移量写入 <code>consumequeue</code>。）</p> <ol start="3"><li><code>indexfile</code>为索引数据文件提供访问服务，根据<code>key</code>进行消息查询</li></ol> <h4 id="producer端">producer端</h4> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+p<span class="token text string">(producer)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">写消息</span><span class="token arrow operator">--&gt;</span></span>b<span class="token text string">(broker)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">写入</span><span class="token arrow operator">--&gt;</span></span>pc<span class="token text string">(PageCache)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">OS后台线程异步刷盘</span><span class="token arrow operator">.-&gt;</span></span>c<span class="token text string">(commitlog)</span>
+pc<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">ack</span><span class="token arrow operator">.-&gt;</span></span>p
+<span class="token keyword">subgraph</span> 持久化
+c<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">消息位置写入</span><span class="token arrow operator">--&gt;</span></span>cq<span class="token text string">(consumequeue)</span>
+c<span class="token arrow operator">--&gt;</span>if<span class="token text string">(indexfile)</span>
+<span class="token keyword">end</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="consumer端">consumer端</h4> <div class="language-mermaid line-numbers-mode"><pre class="language-mermaid"><code><span class="token keyword">graph</span> LR
+c<span class="token text string">(consumer)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">读消息</span><span class="token arrow operator">--&gt;</span></span>c1<span class="token text string">(consumequeue)</span><span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span><span class="token label property">消息offset</span><span class="token arrow operator">--&gt;</span></span>cl<span class="token text string">(commitlog)</span>
+cl<span class="token inter-arrow-label"><span class="token arrow-head arrow operator">-.</span><span class="token label property">消息</span><span class="token arrow operator">.-&gt;</span></span>c
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="faq">FAQ</h2> <h3 id="高可用">高可用</h3> <p><code>namesvr</code>集群、 <code>broker</code>集群 + 主从</p> <h3 id="如何保证消息不重复消费">如何保证消息不重复消费</h3> <p>消息消费完，会发送确认信息，消息显示<code>consumed_success</code>。
+意外的情况，消息消费了，但是<code>MQ</code>刚好重启，消息没有消费成功的状态，就会再被消费一次。消费者保证，消费幂等。</p> <h3 id="消息可靠性传输">消息可靠性传输</h3> <ol><li><p>生产者生产消息，可能由于网络问题，没有发送到<code>MQ</code>，程序会抛异常，重试机制</p></li> <li><p><code>MQ</code>的问题，服务意外挂掉 ，持久化机制，在重启后将持久化数据加载到内存</p></li> <li><p>消费者将消息弄丢，确认机制自动关闭改为手动，只有当消息消费完成，才发送确认<code>ack</code></p></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/20/2022, 6:41:34 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/share/中间件/Redis.html" class="prev">
+        Redis
+      </a></span> <span class="next"><a href="/blog/share/知识点.html">
+        知识点
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.c61f9dc1.js" defer></script><script src="/blog/assets/js/2.388d52cb.js" defer></script><script src="/blog/assets/js/26.99b267df.js" defer></script>
+  </body>
+</html>
