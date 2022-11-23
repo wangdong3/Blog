@@ -38,7 +38,7 @@ module.exports = {
 			  title:'数据结构',
 			  collapsable: true,
 			  children:[
-				'/share/数据结构/排序算法'
+				'/share/数据结构与算法/排序算法'
 			  ]
 			},
 			{
@@ -48,6 +48,8 @@ module.exports = {
 				'/share/数据库/数据库设计',
 				'/share/数据库/索引',
 				'/share/数据库/执行计划',
+				'/share/数据库/mysql事务',
+				'/share/数据库/Mysql与Postgresql',
 			  ]
 			},
 			{
@@ -67,6 +69,18 @@ module.exports = {
 			  collapsable: true,
 			  children:[
 				'/share/知识点',
+			  ]
+			},
+			{
+			  title:'微服务',
+			  collapsable: true,
+			  children:[
+				'/share/微服务/dubbo',
+				'/share/微服务/eureka',
+				'/share/微服务/feign',
+				'/share/微服务/hystrix',
+				'/share/微服务/ribbon',
+				'/share/微服务/zuul',
 			  ]
 			},
 			{
