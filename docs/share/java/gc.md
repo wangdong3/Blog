@@ -1,8 +1,97 @@
 
 
+## Parallel并行收集器
+
+### Parallel Scavenge + Parallel Old
+
+`java8`默认使用的垃圾收集器
+
+### 启动参数
+
+`-XX:+UseParallelGC` 
+
+### `gc`日志分析
+
+```html
+<!--年轻代没有足够区域存放需要分配空间的对象，发生Minor GC-->
+17.536: [GC (Allocation Failure) [PSYoungGen: 2150400K->55756K(2508800K)] 2150400K->55931K(3328000K), 0.0425385 secs] [Times: user=0.11 sys=0.01, real=0.04 secs] 
+...
+114.014: [GC (Allocation Failure) [PSYoungGen: 2395444K->28604K(2613760K)] 2918800K->596010K(3432960K), 0.0462643 secs] [Times: user=0.34 sys=0.02, real=0.05 secs] 
+122.992: [GC (System.gc()) [PSYoungGen: 1670481K->63700K(2611712K)] 2237886K->657609K(3430912K), 0.0399096 secs] [Times: user=0.26 sys=0.00, real=0.04 secs] 
+```
+
+```html
+123.032: [Full GC (System.gc()) [PSYoungGen: 63700K->0K(2611712K)] [ParOldGen: 593909K->643700K(819200K)] 657609K->643700K(3430912K), [Metaspace: 236313K->236311K(1265664K)], 1.4255381 secs] [Times: user=6.99 sys=0.09, real=1.43 secs] 
+...
+163.465: [GC (Allocation Failure) [PSYoungGen: 2438790K->25085K(2635264K)] 3153801K->768160K(3454464K), 0.0355996 secs] [Times: user=0.27 sys=0.00, real=0.04 secs] 
+<!--元空间不足，发生Full GC-->
+163.500: [Full GC (Ergonomics) [PSYoungGen: 25085K->0K(2635264K)] [ParOldGen: 743074K->726220K(1228800K)] 768160K->726220K(3864064K), [Metaspace: 257365K->257365K(1286144K)], 0.4007282 secs] [Times: user=2.11 sys=0.02, real=0.40 secs] 
+```
+
+```html
+3296.942: [GC (System.gc()) [PSYoungGen: 1822505K->113575K(2698752K)] 2859198K->1153940K(3927552K), 0.1386492 secs] [Times: user=0.27 sys=0.05, real=0.14 secs] 
+3297.081: [Full GC (System.gc()) [PSYoungGen: 113575K->0K(2698752K)] [ParOldGen: 1040365K->1027914K(1228800K)] 1153940K->1027914K(3927552K), [Metaspace: 356037K->355718K(1380352K)], 7.7680577 secs] [Times: user=9.98 sys=7.84, real=7.77 secs] 
+```
+
+
+
+## CMS + ParNew
+
+### 启动参数
+
+`-XX:+UseConcMarkSweepGC`
+
+`-XX:+UseParNewGC` 
+
+### GC日志分析
+
+```html
+<!--年轻代空间不足，Minor GC，使用ParNew收集器-->
+2022-11-24T11:31:03.243+0800: 18.851: [GC (Allocation Failure) 2022-11-24T11:31:03.243+0800: 18.851: [ParNew: 2293760K->70009K(2580480K), 0.0494733 secs] 2293760K->70009K(3399680K), 0.0496722 secs] [Times: user=0.16 sys=0.00, real=0.05 secs] 
+...
+...
+2022-11-24T11:32:06.829+0800: 82.437: [GC (Allocation Failure) 2022-11-24T11:32:06.829+0800: 82.437: [ParNew: 2496650K->179972K(2580480K), 0.1030282 secs] 2855276K->610504K(3399680K), 0.1030868 secs] [Times: user=0.61 sys=0.02, real=0.10 secs] 
+<!--1.初始标记STW，标记老年代中所有GC Roots；标记被年轻代中存活对象引用的对象-->
+2022-11-24T11:32:06.933+0800: 82.541: [GC (CMS Initial Mark) [1 CMS-initial-mark: 430531K(819200K)] 655018K(3399680K), 0.0154036 secs] [Times: user=0.13 sys=0.00, real=0.01 secs] 
+<!--2.并发收集阶段，从上一步找到的GC Roots开始，遍历整个老年代，标记所有存活的对象-->
+2022-11-24T11:32:06.948+0800: 82.557: [CMS-concurrent-mark-start]
+2022-11-24T11:32:07.162+0800: 82.771: [CMS-concurrent-mark: 0.214/0.214 secs] [Times: user=0.58 sys=0.03, real=0.21 secs] 
+<!--上一阶段运行的时候，因为应用程序也在并行运行着，一些被标记了的对象的引用发生了改变，这些发生改变的，需要清除-->
+2022-11-24T11:32:07.162+0800: 82.771: [CMS-concurrent-preclean-start]
+2022-11-24T11:32:07.165+0800: 82.774: [CMS-concurrent-preclean: 0.003/0.003 secs] [Times: user=0.01 sys=0.02, real=0.00 secs] 
+<!--可终止的并发预清理-->
+2022-11-24T11:32:07.165+0800: 82.774: [CMS-concurrent-abortable-preclean-start]
+2022-11-24T11:32:10.064+0800: 85.672: [CMS-concurrent-abortable-preclean: 2.897/2.898 secs] [Times: user=6.66 sys=0.36, real=2.90 secs] 
+<!--3.重新标记阶段STW，标记老年代所有存活的对象，包括在并发标记阶段发生改变的或者新创建的引用对象-->
+2022-11-24T11:32:10.064+0800: 85.672: [GC (CMS Final Remark) [YG occupancy: 1399446 K (2580480 K)]
+<!--完成存活对象的标记-->
+2022-11-24T11:32:10.064+0800: 85.672: [Rescan (parallel) , 0.0918303 secs]
+<!--处理弱引用-->
+2022-11-24T11:32:10.156+0800: 85.764: [weak refs processing, 0.0000711 secs]
+<!--卸载不使用的类-->
+2022-11-24T11:32:10.156+0800: 85.764: [class unloading, 0.0155431 secs]
+2022-11-24T11:32:10.171+0800: 85.779: [scrub symbol table, 0.0453657 secs]
+2022-11-24T11:32:10.217+0800: 85.825: [scrub string table, 0.0026624 secs][1 CMS-remark: 430531K(819200K)] 1829978K(3399680K), 0.1571471 secs] [Times: user=0.75 sys=0.00, real=0.16 secs] 
+<!--4.并发清除阶段，清除没有标记的对象，回收空间-->
+2022-11-24T11:32:10.221+0800: 85.829: [CMS-concurrent-sweep-start]
+2022-11-24T11:32:10.329+0800: 85.937: [CMS-concurrent-sweep: 0.107/0.108 secs] [Times: user=0.22 sys=0.02, real=0.11 secs] 
+<!--并发重置，重置CMS算法内部数据结构，为下一阶段收集做准备-->
+2022-11-24T11:32:10.329+0800: 85.937: [CMS-concurrent-reset-start]
+2022-11-24T11:32:10.332+0800: 85.940: [CMS-concurrent-reset: 0.003/0.003 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+
+2022-11-24T11:32:13.219+0800: 88.827: [GC (Allocation Failure) 2022-11-24T11:32:13.219+0800: 88.827: [ParNew: 2473732K->223902K(2580480K), 0.0681104 secs] 2876694K->626863K(3399680K), 0.0682095 secs] [Times: user=0.49 sys=0.00, real=0.07 secs] 
+2022-11-24T11:32:18.673+0800: 94.281: [GC (Allocation Failure) 2022-11-24T11:32:18.673+0800: 94.281: [ParNew: 2517662K->169731K(2580480K), 0.0888472 secs] 2920623K->611258K(3399680K), 0.0889215 secs] [Times: user=0.64 sys=0.00, real=0.09 secs] 
+2022-11-24T11:32:22.720+0800: 98.328: [GC (Allocation Failure) 2022-11-24T11:32:22.720+0800: 98.328: [ParNew: 2463491K->286720K(2580480K), 0.1272165 secs] 2905018K->768677K(3399680K), 0.1273057 secs] [Times: user=0.86 sys=0.00, real=0.13 secs] 
+<!--Full GC-->
+2022-11-24T11:32:30.399+0800: 106.008: [Full GC (System.gc()) 2022-11-24T11:32:30.399+0800: 106.008: [CMS: 481957K->654420K(819200K), 2.0076294 secs] 1184988K->654420K(3399680K), [Metaspace: 234401K->234401K(1263616K)], 2.0120965 secs] [Times: user=1.26 sys=0.74, real=2.01 secs] 
+2022-11-24T11:32:52.407+0800: 128.016: [GC (Allocation Failure) 2022-11-24T11:32:52.407+0800: 128.016: [ParNew: 2293760K->217453K(2580480K), 0.0137873 secs] 2948180K->871873K(3671184K), 0.0138834 secs] [Times: user=0.13 sys=0.00, real=0.01 secs] 
+```
+
+
+
 ## G1垃圾收集器
 
-### 启动参数设置
+### 启动参数
 
 ```
 -XX:+UseG1GC
@@ -95,6 +184,7 @@
    [Code Root Purge: 0.0 ms]
    [Clear CT: 0.4 ms]
    [Other: 28.7 ms]
+	 <!--【疏散失败】-->
       [Evacuation Failure: 26.7 ms]
       [Choose CSet: 0.0 ms]
       [Ref Proc: 0.1 ms]
@@ -121,6 +211,12 @@
 63.550: [GC concurrent-cleanup-start]
 63.550: [GC concurrent-cleanup-end, 0.0000105 secs]
 ```
+
+日志中比较特殊的地方：`to-space exhausted`
+
+在一次`Young GC`之后，`survivor`区和老年代没有足够的空间继续容纳存活的对象（大对象可能会导致存活对象变多），转移失败会导致较长的`Young GC`耗时，这个时候，收集器会将这些未成功复制的分区全部置为老年代分区。
+
+调优手段：首先，从应用层尽量避免过多的大对象分配；降低年轻代区域大小，提高回收次数，变相的增加大对象的回收次数。
 
 #### 3. Mixed GC
 
